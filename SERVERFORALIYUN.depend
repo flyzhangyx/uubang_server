@@ -1,0 +1,64 @@
+# depslib dependency file v1.0
+1541070897 source:h:\2017210415\serverforaliyun\src\main.c
+	"../head/SERVER.h"
+
+1542463009 h:\2017210415\serverforaliyun\head\server.h
+	<stdio.h>
+	<WinSock2.h>
+	<windows.h>
+	<conio.h>
+	<stdlib.h>
+	<string.h>
+	<pthread.h>
+	<time.h>
+
+1542459386 source:h:\2017210415\serverforaliyun\src\initserver.c
+	"../head/SERVER.h"
+
+1542386748 source:h:\2017210415\serverforaliyun\src\acceptclient.c
+	"../head/SERVER.h"
+
+1540985474 source:h:\2017210415\serverforaliyun\src\fun_send.c
+	"../head/SERVER.h"
+
+1541054637 source:h:\2017210415\serverforaliyun\src\startthread.c
+	"../head/SERVER.h"
+
+1542463080 source:h:\2017210415\serverforaliyun\src\talk.c
+	"../head/SERVER.h"
+
+1540999434 source:h:\2017210415\serverforaliyun\src\scan_is_online.c
+	"../head/SERVER.h"
+
+1541145202 source:h:\2017210415\serverforaliyun\src\newonlineuser.c
+	"../head/SERVER.h"
+
+1542462941 source:h:\2017210415\serverforaliyun\src\delete_outlineuser.c
+	"../head/SERVER.h"
+
+1541432843 source:h:\2017210415\serverforaliyun\src\printonlineuser.c
+	"../head/SERVER.h"
+
+1542440246 source:h:\2017210415\serverforaliyun\src\sign_in.c
+	"../head/SERVER.h"
+
+1541067873 source:h:\2017210415\serverforaliyun\src\addtolcoal.c
+	"../head/SERVER.h"
+
+1541394907 source:h:\2017210415\serverforaliyun\src\checkid_pwd.c
+	"../head/SERVER.h"
+
+1542459266 source:h:\2017210415\serverforaliyun\src\updateregisteduser.c
+	"../head/SERVER.h"
+
+1542439886 source:h:\2017210415\serverforaliyun\src\regiter.c
+	"../head/SERVER.h"
+
+1541149902 source:h:\2017210415\serverforaliyun\src\talk_to.c
+
+1541382683 source:h:\2017210415\serverforaliyun\src\buftostruct.c
+	"../head/SERVER.h"
+
+1542462326 source:h:\2017210415\serverforaliyun\src\deletfileuser.c
+	"../head/SERVER.h"
+
