@@ -36,11 +36,21 @@
 		</Unit>
 		<Unit filename="src/AcceptClient.c">
 			<Option compilerVar="CC" />
+			<Option weight="3" />
 		</Unit>
 		<Unit filename="src/AddtoLcoal.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/BitmapFigure.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/BitmapSize.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/CheckID_PWD.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/CheckStillOnline.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/DeletFileUser.c">
@@ -50,6 +60,10 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/InitServer.c">
+			<Option compilerVar="CC" />
+			<Option weight="1" />
+		</Unit>
+		<Unit filename="src/IoT_Talk.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/NewOnlineUser.c">
@@ -61,26 +75,48 @@
 		<Unit filename="src/Regiter.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/RequestContacts.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/RequestMessages.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/SIGN_IN.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/StartThread.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/String.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/Talk.c">
 			<Option compilerVar="CC" />
 		</Unit>
-		<Unit filename="src/Talk_to.c">
+		<Unit filename="src/UdpInit.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/UdpPackResolve.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/UpdateRegistedUser.c">
 			<Option compilerVar="CC" />
 		</Unit>
+		<Unit filename="src/file_send_tcp_thread.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/file_tcp_send.c">
+			<Option compilerVar="CC" />
+		</Unit>
 		<Unit filename="src/fun_send.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="src/log.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="src/main.c">
 			<Option compilerVar="CC" />
+			<Option weight="0" />
 		</Unit>
 		<Extensions>
 			<code_completion />

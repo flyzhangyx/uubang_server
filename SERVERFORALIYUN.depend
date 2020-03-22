@@ -1,8 +1,8 @@
 # depslib dependency file v1.0
-1541070897 source:h:\2017210415\serverforaliyun\src\main.c
+1564506623 source:h:\2017210415\serverforaliyun\src\main.c
 	"../head/SERVER.h"
 
-1542463009 h:\2017210415\serverforaliyun\head\server.h
+1576870168 h:\2017210415\serverforaliyun\head\server.h
 	<stdio.h>
 	<WinSock2.h>
 	<windows.h>
@@ -10,48 +10,49 @@
 	<stdlib.h>
 	<string.h>
 	<pthread.h>
+	<direct.h>
 	<time.h>
 
-1542459386 source:h:\2017210415\serverforaliyun\src\initserver.c
+1576870783 source:h:\2017210415\serverforaliyun\src\initserver.c
 	"../head/SERVER.h"
 
-1542386748 source:h:\2017210415\serverforaliyun\src\acceptclient.c
+1564387709 source:h:\2017210415\serverforaliyun\src\acceptclient.c
 	"../head/SERVER.h"
 
-1540985474 source:h:\2017210415\serverforaliyun\src\fun_send.c
+1566462991 source:h:\2017210415\serverforaliyun\src\fun_send.c
 	"../head/SERVER.h"
 
 1541054637 source:h:\2017210415\serverforaliyun\src\startthread.c
 	"../head/SERVER.h"
 
-1542463080 source:h:\2017210415\serverforaliyun\src\talk.c
+1576869927 source:h:\2017210415\serverforaliyun\src\talk.c
 	"../head/SERVER.h"
 
 1540999434 source:h:\2017210415\serverforaliyun\src\scan_is_online.c
 	"../head/SERVER.h"
 
-1541145202 source:h:\2017210415\serverforaliyun\src\newonlineuser.c
+1564506399 source:h:\2017210415\serverforaliyun\src\newonlineuser.c
 	"../head/SERVER.h"
 
-1542462941 source:h:\2017210415\serverforaliyun\src\delete_outlineuser.c
+1543066039 source:h:\2017210415\serverforaliyun\src\delete_outlineuser.c
 	"../head/SERVER.h"
 
-1541432843 source:h:\2017210415\serverforaliyun\src\printonlineuser.c
+1564506430 source:h:\2017210415\serverforaliyun\src\printonlineuser.c
 	"../head/SERVER.h"
 
-1542440246 source:h:\2017210415\serverforaliyun\src\sign_in.c
+1564506580 source:h:\2017210415\serverforaliyun\src\sign_in.c
 	"../head/SERVER.h"
 
-1541067873 source:h:\2017210415\serverforaliyun\src\addtolcoal.c
+1564506382 source:h:\2017210415\serverforaliyun\src\addtolcoal.c
 	"../head/SERVER.h"
 
-1541394907 source:h:\2017210415\serverforaliyun\src\checkid_pwd.c
+1543304478 source:h:\2017210415\serverforaliyun\src\checkid_pwd.c
 	"../head/SERVER.h"
 
-1542459266 source:h:\2017210415\serverforaliyun\src\updateregisteduser.c
+1564506604 source:h:\2017210415\serverforaliyun\src\updateregisteduser.c
 	"../head/SERVER.h"
 
-1542439886 source:h:\2017210415\serverforaliyun\src\regiter.c
+1566464251 source:h:\2017210415\serverforaliyun\src\regiter.c
 	"../head/SERVER.h"
 
 1541149902 source:h:\2017210415\serverforaliyun\src\talk_to.c
@@ -59,6 +60,42 @@
 1541382683 source:h:\2017210415\serverforaliyun\src\buftostruct.c
 	"../head/SERVER.h"
 
-1542462326 source:h:\2017210415\serverforaliyun\src\deletfileuser.c
+1542524846 source:h:\2017210415\serverforaliyun\src\deletfileuser.c
+	"../head/SERVER.h"
+
+1564464966 source:h:\2017210415\serverforaliyun\src\requestcontacts.c
+	"../head/SERVER.h"
+
+1564463836 source:h:\2017210415\serverforaliyun\src\requestmessages.c
+	"../head/SERVER.h"
+
+1566463609 source:h:\2017210415\serverforaliyun\src\log.c
+	"../head/SERVER.h"
+
+1564388499 source:h:\2017210415\serverforaliyun\src\iot_talk.c
+	"../head/SERVER.h"
+
+1552725258 source:h:\2017210415\serverforaliyun\src\string.c
+	"../head/SERVER.h"
+
+1564464042 source:h:\2017210415\serverforaliyun\src\checkstillonline.c
+	"../head/SERVER.h"
+
+1564471382 source:h:\2017210415\serverforaliyun\src\bitmapsize.c
+	"../head/SERVER.h"
+
+1566546705 source:h:\2017210415\serverforaliyun\src\bitmapfigure.c
+	"../head/SERVER.h"
+
+1564505953 source:h:\2017210415\serverforaliyun\src\udpinit.c
+	"../head/SERVER.h"
+
+1564564737 source:h:\2017210415\serverforaliyun\src\udppackresolve.c
+	"../head/SERVER.h"
+
+1566548085 source:h:\2017210415\serverforaliyun\src\file_tcp_send.c
+	"../head/SERVER.h"
+
+1566549639 source:h:\2017210415\serverforaliyun\src\file_send_tcp_thread.c
 	"../head/SERVER.h"
 

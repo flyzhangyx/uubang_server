@@ -17,7 +17,7 @@ int AddtoLocal(cln a)
     ///******根据接口给节点初始化********
     strcpy(newuser->USERID,a.USERID);
     strcpy(newuser->USERPASSWORD,a.USERPASSWORD);
-    newuser->USER_ADDR=a.ADDR;
+    newuser->USER_socket_udp=a.ADDR;
     newuser->USER_socket=a.remote_socket;
     newuser->next=RegistedUserHead->next;
     RegistedUserHead->next=newuser;

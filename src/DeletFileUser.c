@@ -6,27 +6,14 @@ int DeleteFileUser(cln a)
     {
         if(Tag==NULL)
         {
-            printf("\n注册用户列表中无此用户%s,请检查服务器\n",a.USERID);
-            return 0;
+            printf("\n注册用户列表%s不匹配,请检查服务器\n",a.USERID);
+            return -1;
         }
         else
         {
             if(!strcmp(a.USERID,Tag->USERID))
             {
                 strcpy(Tag->USERPASSWORD,a.REUSERPASSWORD) ;
-                rewind(REGISTERlocal);
-                USER d=(USER)malloc(sizeof(struct user));
-                while(!feof(REGISTERlocal) && fread(d,sizeof(struct user),1,REGISTERlocal))
-                {
-                    if(!strcmp(d->USERID,a.USERID))
-                    {
-                        fseek(REGISTERlocal,ftell(REGISTERlocal)-sizeof(struct user),0);
-                        fwrite(Tag,sizeof(struct user),1,REGISTERlocal);
-                        fseek(REGISTERlocal,RegistedUserHead->OnlineUserNum*sizeof(struct user),0);
-                        break;
-                    }
-                }
-                free(d);
                 return 1;
             }
             else
@@ -35,20 +22,7 @@ int DeleteFileUser(cln a)
                 {
                     if(!strcmp(a.USERID,Tag->next->USERID))
                     {
-                        strcpy(Tag->USERPASSWORD,a.REUSERPASSWORD) ;
-                        rewind(REGISTERlocal);
-                        USER d=(USER)malloc(sizeof(struct user));
-                        while(!feof(REGISTERlocal) && fread(d,sizeof(struct user),1,REGISTERlocal))
-                        {
-                            if(!strcmp(d->USERID,a.USERID))
-                            {
-                                fseek(REGISTERlocal,ftell(REGISTERlocal)-sizeof(struct user),0);
-                                fwrite(Tag,sizeof(struct user),1,REGISTERlocal);
-                                fseek(REGISTERlocal,RegistedUserHead->OnlineUserNum*sizeof(struct user),0);
-                                break;
-                            }
-                        }
-                        free(d);
+                        strcpy(Tag->next->USERPASSWORD,a.REUSERPASSWORD) ;
                         return 1;
                     }
                     else
@@ -63,6 +37,5 @@ int DeleteFileUser(cln a)
     {
         return -1;
     }
-    //printf("\n用户列表中无此用户%s,请检查服务器\n",a.USERID);
     return 0;
 }

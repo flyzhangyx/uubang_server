@@ -47,7 +47,7 @@ int Check_Id_Pwd(int n,cln a)
                 {
                     if(!strcmp(a.USERID,Tag->USERID))
                     {
-                        printf("\ncheckidpwd:已注册用户列表中有此用户%s,禁止注册\n",a.USERID);
+                        //printf("\ncheckidpwd:已注册用户列表中有此用户%s,禁止注册\n",a.USERID);
                         return 1;
                     }
                     else
@@ -55,7 +55,7 @@ int Check_Id_Pwd(int n,cln a)
                         Tag=Tag->next;
                     }
                 }
-                printf("\ncheckidpwd:已注册用户列表中无此用户%s,准许注册\n",a.USERID);
+                //printf("\ncheckidpwd:已注册用户列表中无此用户%s,准许注册\n",a.USERID);
                 return -1;
             }
         }

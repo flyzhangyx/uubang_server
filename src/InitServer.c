@@ -3,13 +3,15 @@ int initServer()
 {
     int scan;
     cln_num=0;
-    strcpy(CHECK,"CH");
+    strcpy(CHECK,"ZY");
     strcpy(SIGN_IN,"SI");//登陆码
     strcpy(REGISTER,"RE");//注册码
     strcpy(MESSAGE,"ME");//信息发送码
     strcpy(TALK_TO,"TA");//通信目标地址码
     strcpy(SIGN_OUT,"SO");//注销登录码
     strcpy(REPWD,"RP");
+    warnfile=0;
+    logflag=0;
     ///***********socket初始化***********************
     WSADATA wsaData;
     while(1)
@@ -38,8 +40,8 @@ int initServer()
     memset(&my_addr,0,sizeof(my_addr)); //数据初始化--清零
     my_addr.sin_family=AF_INET; //设置为IP通信
     my_addr.sin_addr.s_addr=htonl(INADDR_ANY);//服务器IP地址--允许连接到所有本地地址上
-    my_addr.sin_port=htons(65530); //服务器端口号 /*创建服务器端套接字--IPv4协议，面向连接通信，TCP协议*/
-    if((server_sockfd=socket(AF_INET,SOCK_STREAM,0))==SOCKET_ERROR)
+    my_addr.sin_port=htons(3566); //服务器端口号 /*创建服务器端套接字--IPv4协议，面向连接通信，TCP协议*/
+    if((server_sockfd=socket(AF_INET,SOCK_STREAM,0))==INVALID_SOCKET)
     {
         perror("socket");    /*将套接字绑定到服务器的网络地址上*/
         return -1;
@@ -58,6 +60,7 @@ int initServer()
     strcpy(onlineUserHead->DATE,"\0");
     onlineUserHead->OnlineUserNum=0;
     onlineUserHead->next=NULL;
+    loginfo=fopen("Loginfo.info","a+");
     REGISTERlocal=fopen("REGISTEDUSER.txt","a+");
     if(REGISTERlocal==NULL)
     {
@@ -80,13 +83,26 @@ int initServer()
         {
             strcpy(a.USERID,d->USERID);
             strcpy(a.USERPASSWORD, d->USERPASSWORD);
-            a.ADDR=d->USER_ADDR;
-            a.remote_socket=d->USER_socket;
+            a.ADDR=d->USER_socket_udp;
+            //a.remote_socket=d->USER_socket;
             strcpy(a.info,d->info) ;
             AddtoLocal(a);
         }
         free(d);
         printf("本地注册库加载成功！");
+    }
+    FILE* updversion=fopen("update","r");
+    if(updversion)
+    {
+        fgets(app_version,4,updversion);
+        fclose(updversion);
+        app_version[3]='\0';
+        printf("APP版本-%s\n",app_version);
+    }
+    else
+    {
+        printf("更新文件读取失败!");
+        return -1;
     }
     return 1;
 }

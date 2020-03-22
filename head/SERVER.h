@@ -7,13 +7,15 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-#include<time.h>
+#include <direct.h>
+#include <time.h>
 #define BUFSIZ 512
 ///**************在线用户节点****************
 struct user
 {
     SOCKET USER_socket;
-    SOCKADDR_IN USER_ADDR;
+    SOCKADDR_IN USER_socket_udp;
+    //SOCKADDR_IN USER_ADDR;
     char USERID[12];
     char USERPASSWORD[33];
     //char DATE[513];
@@ -21,6 +23,24 @@ struct user
     struct user *next;
 };
 typedef struct user * USER;
+ struct contact
+{
+    char checkcode[18];
+    char USERID[12];
+    char USERPASSWORD[33];
+    char TalktoID[12];
+    char info[10];
+}contact ;
+typedef struct contact * Contact;
+ struct message
+{
+    char checkcode[18];
+    char USERID[12];
+    char USERPASSWORD[33];
+    char TalktoID[12];
+    char data[513];
+} ;
+typedef struct message * Message;
 struct OnlineUserHead
 {
     char DATE[100];
@@ -29,9 +49,10 @@ struct OnlineUserHead
     int OnlineUserNum;
     USER  next;
 };
+///*******************************************
 struct OnlineUserHead * onlineUserHead;
 struct OnlineUserHead * RegistedUserHead;
-///*****************接受**********************
+///*****************接口**********************
 typedef struct
 {
     char checkcode[18];
@@ -54,12 +75,23 @@ typedef struct
     char TalktoID[12];
     char REUSERPASSWORD[33];
     char data[513];
-    char info[100];
+    char info[100];//[0]是否注销登录,N_Y;
 } cln;
+typedef struct
+{
+    cln a;
+    char filename[32];
+    char file_lx[8];
+    char file_path[32];
+} tcp_send_interface;
+
 ///*****************************
 ///*******函数声明**************
 DWORD WINAPI talk(LPVOID);
-DWORD WINAPI fun(LPVOID );
+DWORD WINAPI fun(LPVOID);
+DWORD WINAPI Check_alive(LPVOID);
+DWORD WINAPI UdpPackResolve(LPVOID);
+DWORD WINAPI file_tcp_thread(LPVOID);
 int StartThread(cln* );
 int AcceptClient();
 int initServer();
@@ -73,6 +105,15 @@ USER Print_onlineuser(int,char*);
 int UpdateRegistedUser(USER);
 int Register(cln*);
 int DeleteFileUser(cln );
+void RequestContact(cln*,FILE*);
+void RequestMessage(cln*,FILE*);
+void logwrite(char*);
+int IoTtalk(char*,char*,cln*);
+int Stringcut(char* str,int m,int n,char *des);
+int BitmapSize(FILE*);
+int bitmapfigure(cln*,FILE*,char*);
+int UdpInit(int);
+int file_tcp_send(cln*,FILE*,char*,char*);
 ///*****************************
 ///***************各类标志码**********************
 char CHECK[3];///应用进入时登陆检测是否已经注册
@@ -85,9 +126,14 @@ char CONTACT[3];///联系人码
 char REPWD[3];
 ///************************************************
 ///**********全局变量****************
-SOCKET server_sockfd;//服务器端套接字
+SOCKET server_sockfd;//TCP服务器端套接字
+SOCKET server_sockfd_udp;//UDP服务器端套接字
 HANDLE cln_thread[200];
 int cln_num;
+int warnfile;
+int logflag;
 FILE* REGISTERlocal;
+FILE* loginfo;
+char app_version[4];
 ///**********************************
 #endif // SERVER_H_INCLUDED

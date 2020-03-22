@@ -7,14 +7,26 @@ int UpdateRegistedUser(USER a)
     timenow=ctime(&t);
     cln b;
     strcpy(b.info,a->info);
-    b.ADDR=a->USER_ADDR;
+    b.ADDR=a->USER_socket_udp;
     b.remote_socket=a->USER_socket;
     strcpy(b.USERID,a->USERID);
     strcpy(b.USERPASSWORD,a->USERPASSWORD);
     strcpy(b.DATE,timenow);
     AddtoLocal(b);
-    if(fwrite(a,sizeof(struct user),1,REGISTERlocal)!=1)
-        return -1;
+    while(1)
+    {
+        if(!warnfile)
+        {
+            warnfile=1;
+            if(fwrite(a,sizeof(struct user),1,REGISTERlocal)!=1)
+            {
+                warnfile=0;
+                return -1;
+            }
         fflush(REGISTERlocal);
+        warnfile=0;
+        break;
+        }
+    }
     return 1;
 }
